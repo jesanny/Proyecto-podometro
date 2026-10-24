@@ -3,7 +3,7 @@
  * acerca de los pasos, distancia, ..... que una persona
  * ha dado en una semana. 
  * 
- * @author    - pon aquí tu nombre - 
+ * @author    - Jesanny - 
  */
 public class Podometro {
     
@@ -12,19 +12,48 @@ public class Podometro {
      * Inicializa el podómetro con la marca indicada por el parámetro.
      * El resto de atributos se ponen a 0 y el sexo, por defecto, es mujer
      */
-    public Podometro() {
 
-        
+    private static final char HOMBRE = 'H';
+    private static final char MUJER = 'M';
+    private static final double RAZON_ZANCADA_HOMBRE = 0.45;
+    private static final double RAZON_ZANCADA_MUJER = 0.41;
+    private static final int SABADO = 6;
+    private static final int DOMINGO = 7;   
+    
+    private String marca;
+    private int altura;
+    private char sexo;
+    private int longitudZancada;
+    private int totalPasosLaborables;
+    private int totalPasosSabado;
+    private int totalPasosDomingo;
+    private double totalDistanciaSemana;
+    private double totalDistanciaFinSemana;
+    private int tiempo;
+    private int caminatasNoche;
+
+
+    public Podometro(String queMarca) {
+        marca = queMarca;
+        altura = 0;
+        sexo = MUJER;
+        longitudZancada = 0;
+        totalPasosLaborables = 0;
+        totalPasosSabado = 0;
+        totalPasosDomingo = 0;
+        totalDistanciaSemana = 0.0;
+        totalDistanciaFinSemana = 0.0;
+        tiempo = 0;
+        caminatasNoche = 0;
     }
 
     /**
      * accesor para la marca
      *  
      */
-    public      getMarca() {
 
-         
-
+    public String getMarca(){
+        return marca;
     }
 
     /**
