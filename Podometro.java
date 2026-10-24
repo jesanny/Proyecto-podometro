@@ -67,7 +67,13 @@ public class Podometro {
      */
     public void configurar(int queAltura, char queSexo) {
 
-        
+        altura = queAltura;
+        sexo = queSexo;
+        if (sexo == HOMBRE) {   
+            longitudZancada = (int) Math.ceil(altura * RAZON_ZANCADA_HOMBRE); 
+        } else {
+            longitudZancada = (int) Math.floor(altura * RAZON_ZANCADA_MUJER);
+        }   
     }
 
      /**
