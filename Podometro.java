@@ -1,4 +1,4 @@
-﻿/**
+/**
  * La clase modela un sencillo podómetro que registra información
  * acerca de los pasos, distancia, ..... que una persona
  * ha dado en una semana. 
@@ -66,7 +66,6 @@ public class Podometro {
      *  
      */
     public void configurar(int queAltura, char queSexo) {
-
         altura = queAltura;
         sexo = queSexo;
         if (sexo == HOMBRE) {   
@@ -89,12 +88,24 @@ public class Podometro {
      *   
      *   (leer enunciado del ejercicio)
      */
-    public void registrarCaminata(int pasos, int dia, int horaInicio,
-                            int horaFin) {
-
-       
-
-    }
+    public void registrarCaminata(int pasos, int dia, int horaInicio,int horaFin){
+        pasosTotales = pasos * pasosTotales;
+        
+        double distancia= pasos * longitudZancada / 100000.0;
+        
+            switch (dia){
+                case SABADO:
+                    totalDistanciaFinSemana += distancia ;
+                    break ;
+                case DOMINGO:
+                    totalPasosDomingo += distancia;
+                default:
+                    totalPasosLaborables += pasos;
+                    break;
+                    
+            }
+        totalDistanciaSemana += distancia;
+     } 
     
      /**
      * Muestra en pantalla la configuración del podómetro

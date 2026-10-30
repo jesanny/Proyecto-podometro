@@ -301,3 +301,4 @@ Día/s con más pasos caminados: LABORABLES  SABADO  DOMINGO
 
 Si el programa no compila, se aplica una penalización de **-0,5 sobre 10**.
 
+# Proyecto-podometro
