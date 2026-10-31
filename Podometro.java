@@ -156,8 +156,8 @@ public class Podometro {
         "Nº pasos días laborables: " + totalPasosLaborables + "\n" +
         "Nº pasos SÁBADO: " + totalPasosSabado + "\n" +
         "Nº pasos DOMINGO: " + totalPasosDomingo + "\n" +
-        "Nº caminatas realizadas a partir de las 21h.: " + caminatasNoche + "\n" +
-        "Tiempo total caminado en la semana:" + tiempo + " minutos");
+        "Nº caminatas realizadas a partir de las 21h: " + caminatasNoche + "\n" +
+        "Tiempo total caminado en la semana: " + tiempo + "m");
     }
 
     /**
@@ -176,7 +176,17 @@ public class Podometro {
      * que se establece a MUJER. La marca no varía
      *  
      */    
-    public void reset() {
-
+    public void reset(String queMarca) {
+         marca = queMarca;
+        altura = 0;
+        sexo = MUJER;
+        longitudZancada = 0;
+        totalPasosLaborables = 0;
+        totalPasosSabado = 0;
+        totalPasosDomingo = 0;
+        totalDistanciaSemana = 0.0;
+        totalDistanciaFinSemana = 0.0;
+        tiempo = 0;
+        caminatasNoche = 0;
     }
 }
