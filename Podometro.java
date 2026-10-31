@@ -110,6 +110,8 @@ public class Podometro {
                 break;
         }
         totalDistanciaSemana += distancia;
+
+        // me falta calcular el tiempo de la caminata y si es de noche 
     } 
 
     /**
@@ -121,6 +123,20 @@ public class Podometro {
      */
     public void printConfiguracion() {
 
+        String queSexo;
+    
+        if (sexo == 'M') {
+            queSexo = "MUJER";
+        }
+           else {
+                queSexo = "HOMBRE";
+        } 
+
+        System.out.println("Configuración del podómetro\n" + //
+            "*********************************\n" + //
+            "Altura: " +   altura / 100.0 + " metros\n" + //
+            "Sexo: " +  queSexo + "\n" + //
+            "Longitud zancada: " + longitudZancada / 100.0 + " metros");
 
     }
 
@@ -133,9 +149,16 @@ public class Podometro {
      */
     public void printEstadísticas() {
 
-
+     System.out.println ( " Estadísticas\n" + 
+        "*********************************\n" +
+        "Distancia recorrida toda la semana: " + totalDistanciaSemana + " Km \n " +
+        "Distancia recorrida fin de semana: " + totalDistanciaFinSemana + " Km  \n" +
+        "Nº pasos días laborables: " + totalPasosLaborables + "\n" +
+        "Nº pasos SÁBADO: " + totalPasosSabado + "\n" +
+        "Nº pasos DOMINGO: " + totalPasosDomingo + "\n" +
+        "Nº caminatas realizadas a partir de las 21h.: " + caminatasNoche + "\n" +
+        "Tiempo total caminado en la semana:" + tiempo + " minutos");
     }
-
 
     /**
      *  Calcula y devuelve un String que representa el nombre del día
@@ -155,7 +178,5 @@ public class Podometro {
      */    
     public void reset() {
 
-
     }
-
 }
