@@ -158,7 +158,6 @@ Nº pasos DOMINGO: 15000
 Nº caminatas realizadas a partir de las 21h.: 3
 
 Tiempo total caminado en la semana: 11h y 48m
-Día/s con más pasos caminados: LABORABLES
 ```
 ---
 #### Método `diaMayorNumeroPasos()`
