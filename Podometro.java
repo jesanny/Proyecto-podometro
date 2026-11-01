@@ -111,7 +111,20 @@ public class Podometro {
         }
         totalDistanciaSemana += distancia;
 
-        // me falta calcular el tiempo de la caminata y si es de noche 
+        if (horaInicio >= 2100) {
+            caminatasNoche++;
+        }
+
+        // me falta calcular el tiempo
+       int horaEntrada = horaInicio / 100;
+        int minutoEntrada = horaInicio % 100;
+        int inicioEnMinutos = horaEntrada * 60 + minutoEntrada;
+
+        int horaSalida = horaFin / 100;
+        int minutoSalida = horaFin % 100;
+        int finEnMinutos = horaSalida * 60 + minutoSalida;
+
+        tiempo += finEnMinutos - inicioEnMinutos;
     } 
 
     /**
@@ -176,8 +189,7 @@ public class Podometro {
      * que se establece a MUJER. La marca no varía
      *  
      */    
-    public void reset(String queMarca) {
-         marca = queMarca;
+    public void reset() {
         altura = 0;
         sexo = MUJER;
         longitudZancada = 0;
