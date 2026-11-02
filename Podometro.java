@@ -111,20 +111,22 @@ public class Podometro {
         }
         totalDistanciaSemana += distancia;
 
-        if (horaInicio >= 2100) {
-            caminatasNoche++;
-        }
+       
 
         // me falta calcular el tiempo
         int horaEntrada = horaInicio / 100;
         int minutoEntrada = horaInicio % 100;
-        int inicioEnMinutos = horaEntrada * 60 + minutoEntrada;
+        int inicioEnMinutos = (horaEntrada * 60) + minutoEntrada;
 
         int horaSalida = horaFin / 100;
         int minutoSalida = horaFin % 100;
-        int finEnMinutos = horaSalida * 60 + minutoSalida;
+        int finEnMinutos = (horaSalida * 60) + minutoSalida;
 
-        tiempo = finEnMinutos + inicioEnMinutos;
+        tiempo = finEnMinutos - inicioEnMinutos;
+
+         if (horaInicio >= 21) {
+            caminatasNoche++;
+        }
     } 
 
     /**
@@ -170,7 +172,7 @@ public class Podometro {
             "Nº pasos SÁBADO: " + totalPasosSabado + "\n" +
             "Nº pasos DOMINGO: " + totalPasosDomingo + "\n" +
             "Nº caminatas realizadas a partir de las 21h: " + caminatasNoche + "\n" +
-            "Tiempo total caminado en la semana: " + (tiempo/100) + "h y " + (tiempo%100) + "m");
+            "Tiempo total caminado en la semana: " + (tiempo/60) + "h y " + (tiempo%60) + "m");
     }
 
     /**
@@ -207,4 +209,6 @@ public class Podometro {
         tiempo = 0;
         caminatasNoche = 0;
     }
+
+    // revisar todo antes de enviar 
 }
